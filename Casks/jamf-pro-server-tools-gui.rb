@@ -1,10 +1,14 @@
-cask 'jamf-pro-server-tools-gui.rb' do
+cask 'jamf-pro-server-tools-gui' do
   version ':latest'
-  sha256 '4c4c08038cc25073fcc2d940684944a6ea094f37bf2f684f74020d0e12199bd5'
+  sha256 '3b7d05d3a94cdf211b71fd1867dbb39f79231ac20ee59d9924faa11c121d2358'
 
   url 'https://archive.services.jamfcloud.com/jamf-pro-server-tools/release/latest/gui/server-tools.jar'
-  name 'server-tools.jar'
+  name 'jamf-pro-server-tools-gui'
   homepage 'https://archive.services.jamfcloud.com/#jamf-pro-server-tools/release/latest/'
 
-  artifact 'server-tools.jar', target: "/Library/JSS/bin/server-tools.jar"
+  artifact 'server-tools.jar', target: '/Library/JSS/bin/server-tools.jar'
+
+  caveats do
+    depends_on_java '8'
+  end
 end
